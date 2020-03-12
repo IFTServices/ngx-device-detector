@@ -133,7 +133,7 @@ export const TABLETS_RE = {
         GT-P5110|GT-P6200|GT-P7320|GT-P7511|GT-N8000|GT-P8510|SGH-I497|SPH-P500|SGH-T779|SCH-I705|
         SCH-I915|GT-N8013|GT-P3113|GT-P5113|GT-P8110|GT-N8010|GT-N8005|GT-N8020|GT-P1013|GT-P6201|
         GT-P7501|GT-N5100|GT-N5105|GT-N5110|SHV-E140K|SHV-E140L|SHV-E140S|SHV-E150S|SHV-E230K|SHV-E230L|
-        SHV-E230S|SHW-M180K|SHW-M180L|SHW-M180S|SHW-M180W|SHW-M300W|SHW-M305W|SHW-M380K|SHW-M380S|SHW-M380W|
+        SHV-E230S|SHW-M180K|SHW-M180L|SM-T290|SHW-M180S|SHW-M180W|SHW-M300W|SHW-M305W|SHW-M380K|SHW-M380S|SHW-M380W|
         SHW-M430W|SHW-M480K|SHW-M480S|SHW-M480W|SHW-M485W|SHW-M486W|SHW-M500W|GT-I9228|SCH-P739|SCH-I925|
         GT-I9200|GT-P5200|GT-P5210|GT-P5210X|SM-T311|SM-T310|SM-T310X|SM-T210|SM-T210R|SM-T211|SM-P600|
         SM-P601|SM-P605|SM-P900|SM-P901|SM-T217|SM-T217A|SM-T217S|SM-P6000|SM-T3100|SGH-I467|XE500|SM-T110|
@@ -144,7 +144,7 @@ export const TABLETS_RE = {
         SM-T707A|SM-T807A|SM-T237|SM-T807P|SM-P607T|SM-T217T|SM-T337T|SM-T807T|SM-T116NQ|SM-T116BU|SM-P550|
         SM-T350|SM-T550|SM-T9000|SM-P9000|SM-T705Y|SM-T805|GT-P3113|SM-T710|SM-T810|SM-T815|SM-T360|SM-T533|
         SM-T113|SM-T335|SM-T715|SM-T560|SM-T670|SM-T677|SM-T377|SM-T567|SM-T357T|SM-T555|SM-T561|SM-T713|
-        SM-T719|SM-T813|SM-T819|SM-T580|SM-T355Y?|SM-T280|SM-T817A|SM-T820|SM-W700|SM-P580|SM-T587|SM-P350|
+        SM-T719|SM-T813|SM-T819|SM-T580|SM-T590|SM-T355Y?|SM-T280|SM-T817A|SM-T820|SM-W700|SM-P580|SM-T587|SM-P350|
         SM-P555M|SM-P355M|SM-T113NU|SM-T815Y|SM-T585|SM-T285|SM-T825|SM-W708|SM-T835`),
   Kindle: new RegExp(`Kindle|Silk.*Accelerated|Android.*\\b(KFOT|KFTT|KFJWI|KFJWA|KFOTE|KFSOWI|KFTHWI|KFTHWA|KFAPWI|
         KFAPWA|WFJWAE|KFSAWA|KFSAWI|KFASWI|KFARWI|KFFOWI|KFGIWI|KFMEWI)\\b|Android.*Silk\/[0-9.]+ like Chrome\
@@ -173,7 +173,7 @@ export const TABLETS_RE = {
         PMT5887|PMT5001|PMT5002`),
   LenovoTablet: new RegExp(`Lenovo TAB|Idea(Tab|Pad)( A1|A10| K1|)|ThinkPad([ ]+)?Tablet|YT3-850M|YT3-X90L|YT3-X90F|
         YT3-X90X|Lenovo.*(S2109|S2110|S5000|S6000|K3011|A3000|A3500|A1000|A2107|A2109|A1107|A5500|A7600|B6000|
-        B8000|B8080)(-|)(FL|F|HV|H|)|TB-X103F|TB-X304F|TB-X304L|TB-8703F|Tab2A7-10F|TB2-X30L`),
+        B8000|B8080)(-|)(FL|F|HV|H|)|TB-X103F|TB-X304F|TB-X304L|TB-X704F|TB-8703F|Tab2A7-10F|TB2-X30L`),
   DellTablet: /Venue 11|Venue 8|Venue 7|Dell Streak 10|Dell Streak 7/,
   YarvikTablet: new RegExp(`Android.*\\b(TAB210|TAB211|TAB224|TAB250|TAB260|TAB264|TAB310|TAB360|TAB364|TAB410|TAB411|
         TAB420|TAB424|TAB450|TAB460|TAB461|TAB464|TAB465|TAB467|TAB468|TAB07-100|TAB07-101|TAB07-150|TAB07-151|
@@ -355,6 +355,7 @@ export const DEVICES = {
   APPLE_TV: 'Apple-TV',
   GOOGLE_TV: 'Google-TV',
   ANDROID: 'Android',
+  Tesla: 'Tesla',
   iPad: 'iPad',
   IPHONE: 'iPhone',
   iPod: 'iPod',
@@ -431,6 +432,7 @@ export const OS_VERSIONS: any = {
   MACOSX_3: 'mac-os-x-3',
   MACOSX_2: 'mac-os-x-2',
   MACOSX: 'mac-os-x',
+  iOS: 'iOS',
   UNKNOWN: 'unknown'
 };
 
@@ -484,9 +486,10 @@ export const DEVICES_RE: any = {
   CHROMECAST: /\bCrKey\b/,
   APPLE_TV: /^iTunes-AppleTV\/4.1$/,
   GOOGLE_TV: /\bGoogleTV\b/,
+  Tesla: /Tesla\/([0-9]{4}.[0-9]{1,2}.?[0-9]{0,2}.?[0-9]{0,2})-(.{7})/
 };
 
-export const OS_VERSIONS_RE: any = {
+export const OS_VERSIONS_RE_MAP: any = {
   WINDOWS_3_11: /Win16/,
   WINDOWS_95: /(Windows 95|Win95|Windows_95)/,
   WINDOWS_ME: /(Win 9x 4.90|Windows ME)/,
@@ -517,13 +520,14 @@ export const OS_VERSIONS_RE: any = {
   MACOSX_12: /(Mac OS X 10.12)/,
   MACOSX_13: /(Mac OS X 10.13)/,
   MACOSX_14: /(Mac OS X 10.14)/,
-  MACOSX_15: /(Mac OS X 10.15)/
+  MACOSX_15: /(Mac OS X 10.15)/,
+  iOS: /(iPhone OS\s*[0-9_]+)/,
 };
 
 export const BROWSER_VERSIONS_RE_MAP: any = {
   CHROME: [/\bChrome\/([\d\.]+)\b/, /\bCriOS\/([\d\.]+)\b/, /\bHeadlessChrome\/([\d\.]+)\b/],
-  FIREFOX: /\bFirefox\/([\d\.]+)\b/,
-  SAFARI: /\bVersion\/([\d\.]+)\b/,
+  FIREFOX: [/\bFirefox\/([\d\.]+)\b/, /\bFxiOS\/([\d\.]+)\b/],
+  SAFARI: [/\bVersion\/([\d\.]+)\b/, /\bSafari\/([\d\.]+)\b/],
   OPERA: [/\bVersion\/([\d\.]+)\b/, /\bOPR\/([\d\.]+)\b/],
   IE: [/\bMSIE ([\d\.]+\w?)\b/, /\brv:([\d\.]+\w?)\b/],
   MS_EDGE: /\bEdg(?:e|A|iOS)\/([\d\.]+)\b/,
@@ -531,6 +535,11 @@ export const BROWSER_VERSIONS_RE_MAP: any = {
   SAMSUNG: /\bSamsungBrowser\/([\d\.]+)\b/,
   UCBROWSER: /\bUCBrowser\/([\d\.]+)\b/,
 };
+
+export const OS_VERSIONS_RE: any = Object.keys(OS_VERSIONS_RE_MAP).reduce(function (obj: any, key: any) {
+  obj[key] = OS_VERSIONS_RE_MAP[key];
+  return obj;
+}, {});
 
 export const BROWSER_VERSIONS_RE: any = Object.keys(BROWSER_VERSIONS_RE_MAP).reduce(function (obj: any, key: any) {
   obj[BROWSERS[key]] = BROWSER_VERSIONS_RE_MAP[key];

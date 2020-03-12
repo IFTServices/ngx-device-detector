@@ -1,5 +1,34 @@
 # Change Log
 
+## 1.4.0
+- Fixes [Add Tesla detection](https://github.com/KoderLabs/ngx-device-detector/issues/132).
+- Fixes [Galaxy Tab A is not detected (SM-T290)](https://github.com/KoderLabs/ngx-device-detector/issues/131)
+- Exposed `setDeviceInfo` method from the `DeviceDetectorService`
+
+## 1.3.20
+- Fixes [Windows 10 detection](https://github.com/KoderLabs/ngx-device-detector/issues). Thanks to [Nabeel Hassan](https://github.com/Nabeelhassan).
+
+## 1.3.19
+- Fixes of Angular Universal breaking for `navigator` (same as 1.3.17 because I was sleepy)
+
+## 1.3.18
+- Fixes of Angular Universal breaking for `navigator`
+
+## 1.3.16
+- iOS Firefox detection fix
+
+## 1.3.15
+- Minor fixes
+
+## 1.3.14
+- Minor fixes
+
+## 1.3.13
+- Minor fixes
+
+## 1.3.12
+- Fixed [#113 - iPad OS13 detection](https://github.com/KoderLabs/ngx-device-detector/issues/113). Thanks to [Syed Saad Qamar](https://github.com/SaadQamar01)
+
 ## 1.3.11
 - Fixed [#109 - The mobile device is determined to be a tablet](https://github.com/KoderLabs/ngx-device-detector/issues/109)
 
